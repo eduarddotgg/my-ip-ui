@@ -15,7 +15,7 @@ var express  = require('express');
 var myipui   = require('myip-ui');
 
 var server   = express();
-var port     = 3000();
+var port     = 3000;
 
 server.use(myipui({ port: port }));
 server.use(express.static('./dest'));
