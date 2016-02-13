@@ -15,7 +15,7 @@ MY IP UI was built on top of [EXPRESS](http://expressjs.com) so if you would lik
 ## Usage
 ```js
 var express  = require('express');
-var myipui   = require('myip-ui');
+var myipui   = require('my-ip-ui');
 
 var server   = express();
 var port     = 3000;
