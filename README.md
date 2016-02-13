@@ -8,6 +8,7 @@ MY IP UI was built on top of [EXPRESS](http://expressjs.com) so if you would lik
 - [QR-IMAGE](https://github.com/alexeyten/qr-image) - generates QR-code SVG based on current IP address.
 - UI WRAPPER - wraps QR-code SVG to custom UI.
 - [INJECT-HTML](https://github.com/alessioalex/inject-html) - injects UI WRAPPER to every page served by http server.
+<img title="MY IP UI" src="http://adm-designhouse.com/myipui.gif">
 
 ## Usage
 ```js
