@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>MY IP UI</title>
+	<style>
+		.my-ip-qr-ui {
+			background: rgba(0, 0, 0, .9);
+			box-sizing: border-box;
+			display: block;
+			left: 0;
+			opacity: 0;
+			padding: 10px 20px;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			transition: all .3s ease;
+			-webkit-transition: all .3s ease;
+			-moz-transition: all .3s ease;
+			transform: translate(0, -100%);
+			-webkit-transform: translate(0, -100%);
+			-moz-transform: translate(0, -100%)
+		}
+		
+		.my-ip-qr-ui.opened {
+			opacity: 1;
+			transform: translate(0, 0);
+			-webkit-transform: translate(0, 0);
+			-moz-transform: translate(0, 0)
+		}
+		
+		.my-ip-qr-ui__qr-code {
+			background: rgba(255, 255, 255, 1);
+			box-sizing: border-box;
+			display: block;
+			margin: 20px auto;
+			max-width: 200px;
+			padding: 20px;
+			width: 100%
+		}
+		
+		.my-ip-qr-ui__qr-code svg {
+			box-sizing: border-box;
+			width: 100%
+		}
+		
+		p.my-ip-qr-ui__text--lead {
+			box-sizing: border-box;
+			color: rgba(255, 255, 255, .8);
+			font-family: arial, sans-serif;
+			font-size: 12px;
+			line-height: 22px;
+			margin: 5px auto;
+			max-width: 400px;
+			text-align: center
+		}
+		
+		p.my-ip-qr-ui__text {
+			box-sizing: border-box;
+			color: rgba(255, 255, 255, .8);
+			font-family: arial, sans-serif;
+			font-size: 12px;
+			line-height: 22px;
+			margin: 5px auto;
+			max-width: 400px;
+			text-align: center
+		}
+		
+		p.my-ip-qr-ui__text a {
+			color: rgba(255, 255, 255, .8)
+		}
+		
+		p.my-ip-qr-ui__text a:hover {
+			text-decoration: none
+		}
+		
+		.my-ip-qr-ui--open-button {
+			background: rgba(0, 0, 0, .8);
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			color: #fff;
+			cursor: pointer;
+			display: block;
+			float: left;
+			font-family: arial, sans-serif;
+			font-size: 12px;
+			left: 50%;
+			padding: 5px 20px;
+			position: absolute;
+			top: 0;
+			transition: all .3s ease;
+			-webkit-transition: all .3s ease;
+			-moz-transition: all .3s ease;
+			transform: translate(-50%, -100%);
+			-webkit-transform: translate(-50%, -100%);
+			-moz-transform: translate(-50%, -100%)
+		}
+		
+		.my-ip-qr-ui--open-button.hide-text {
+			background: rgba(255, 255, 255, .9);
+			color: rgba(0, 0, 0, 1)
+		}
+		
+		.my-ip-qr-ui--open-button .show-text,
+		.my-ip-qr-ui--open-button.hide-text .hide-text {
+			display: block
+		}
+		
+		.my-ip-qr-ui--open-button .hide-text,
+		.my-ip-qr-ui--open-button.hide-text .show-text {
+			display: none
+		}
+		
+		html:hover .my-ip-qr-ui--open-button {
+			transform: translate(-50%, 0);
+			-webkit-transform: translate(-50%, 0);
+			-moz-transform: translate(-50%, 0)
+		}
+		
+		@media screen and (min-width: 480px) {
+			.my-ip-qr-ui {
+				padding: 40px 20px
+			}
+			.my-ip-qr-ui__qr-code {
+				max-width: 300px;
+				margin: 40px auto
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id='myipqrui' class='my-ip-qr-ui'>
+		<div class='my-ip-qr-ui__wrapper'>
+			<p class='my-ip-qr-ui__text--lead'>Your current url is: IP placeholder</p>
+			<p class='my-ip-qr-ui__text'>Use this QR-code to open current url on any device.</p>
+			<div class='my-ip-qr-ui__qr-code'>QR-code placeholder</div>
+			<p class='my-ip-qr-ui__text'>Make sure that all devices are using same local network.</p>
+		</div>
+		<div class='my-ip-qr-ui__wrapper'>
+			<p class='my-ip-qr-ui__text'>Thank you for using MY IP QR UI! For more information visit <a href='https://github.com/admdh/my-ip-qr-ui' title='link to github'>https://github.com/admdh/my-ip-qr-ui</a></p>
+		</div>
+	</div>
+	<div id='myipqruiopenbutton' class='my-ip-qr-ui--open-button'><span class="show-text">Show My IP</span><span class="hide-text">Hide My IP</span></div>
+
+	<script>
+		function toggleClass(element, className) {
+			if (!element || !className) {
+				return;
+			}
+			var classString = element.className,
+				nameIndex = classString.indexOf(className);
+			if (nameIndex == -1) {
+				classString += ' ' + className;
+			} else {
+				classString = classString.substr(0, nameIndex) + classString.substr(nameIndex + className.length);
+			}
+			element.className = classString;
+		}
+		document.getElementById('myipqruiopenbutton').addEventListener('click', function() {
+			toggleClass(document.getElementById('myipqrui'), 'opened');
+			toggleClass(document.getElementById('myipqruiopenbutton'), 'hide-text');
+		});
+	</script>
+</body>
+
+</html>

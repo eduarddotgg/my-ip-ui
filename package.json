@@ -1,0 +1,28 @@
+{
+  "name": "my-ip-ui",
+  "version": "1.0.0",
+  "description": "UI tool that generates QR-code of your current IP addres for easy accesing development URL from any mobile device.",
+  "keywords": [
+      "qr", "qr-code", "ip", "my ip", "local ip", "current ip", "ui", "qr ui", "qr-code ui", "ip ui", "current ip ui"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "inject-html": "^1.0.1",
+    "my-ip": "^1.1.1",
+    "qr-image": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/admdh/my-ip-qr-ui.git"
+  },
+  "author": "Eduárd Pocstár <admdh.com@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/admdh/my-ip-qr-ui/issues"
+  },
+  "homepage": "https://github.com/admdh/my-ip-qr-ui#readme"
+}
