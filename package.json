@@ -1,7 +1,7 @@
 {
   "name": "my-ip-ui",
-  "version": "1.0.0",
-  "description": "UI tool that generates QR-code of your current IP addres for easy accesing development URL from any mobile device.",
+  "version": "1.0.1",
+  "description": "MY IP UI - is a UI tool built for easy opening development url on any mobile device",
   "keywords": [
       "qr", "qr-code", "ip", "my ip", "local ip", "current ip", "ui", "qr ui", "qr-code ui", "ip ui", "current ip ui"
   ],
